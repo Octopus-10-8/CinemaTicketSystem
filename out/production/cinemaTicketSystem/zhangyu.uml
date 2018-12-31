@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="68.1420454545455" y="160.0">entity.CommentsPerfect</node>
+    <node x="629.4488636363636" y="160.0">entity.HallPerfect</node>
+    <node x="270.125" y="160.0">entity.TicketPerfect</node>
+    <node x="0.0" y="0.0">entity.Comments</node>
+    <node x="130.0" y="0.0">entity.User</node>
+    <node x="437.875" y="0.0">entity.Session</node>
+    <node x="231.87500000000003" y="0.0">entity.Ticket</node>
+    <node x="477.4488636363636" y="160.0">entity.SessionPerfect</node>
+    <node x="562.0625" y="0.0">entity.Cinema</node>
+    <node x="676.4204545454546" y="0.0">entity.Hall</node>
+    <node x="333.875" y="0.0">entity.Movie</node>
+    <node x="0.0" y="235.0">entity.Key</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="entity.SessionPerfect" target="entity.Session">
+      <point x="-24.75" y="-15.0" />
+      <point x="518.6988636363636" y="100.0" />
+      <point x="495.375" y="100.0" />
+      <point x="11.5" y="15.0" />
+    </edge>
+    <edge source="entity.CommentsPerfect" target="entity.Movie">
+      <point x="37.5" y="-15.0" />
+      <point x="180.6420454545455" y="90.0" />
+      <point x="340.875" y="90.0" />
+      <point x="-35.0" y="15.0" />
+    </edge>
+    <edge source="entity.HallPerfect" target="entity.Hall">
+      <point x="41.25" y="-15.0" />
+      <point x="725.6988636363636" y="140.0" />
+      <point x="737.6704545454546" y="140.0" />
+      <point x="26.25" y="15.0" />
+    </edge>
+    <edge source="entity.SessionPerfect" target="entity.Cinema">
+      <point x="24.75" y="-15.0" />
+      <point x="568.1988636363636" y="110.0" />
+      <point x="596.1875" y="110.0" />
+      <point x="-11.375" y="15.0" />
+    </edge>
+    <edge source="entity.SessionPerfect" target="entity.Hall">
+      <point x="57.75" y="-15.0" />
+      <point x="601.1988636363636" y="130.0" />
+      <point x="702.6704545454546" y="130.0" />
+      <point x="-8.75" y="15.0" />
+    </edge>
+    <edge source="entity.SessionPerfect" target="entity.Movie">
+      <point x="-57.75" y="-15.0" />
+      <point x="485.6988636363636" y="120.0" />
+      <point x="396.875" y="120.0" />
+      <point x="21.0" y="15.0" />
+    </edge>
+    <edge source="entity.CommentsPerfect" target="entity.User">
+      <point x="12.5" y="-15.0" />
+      <point x="155.6420454545455" y="140.0" />
+      <point x="158.125" y="140.0" />
+      <point x="-9.375" y="15.0" />
+    </edge>
+    <edge source="entity.HallPerfect" target="entity.Cinema">
+      <point x="-13.75" y="-15.0" />
+      <point x="670.6988636363636" y="100.0" />
+      <point x="641.6875" y="100.0" />
+      <point x="34.125" y="15.0" />
+    </edge>
+    <edge source="entity.CommentsPerfect" target="entity.Comments">
+      <point x="-37.5" y="-15.0" />
+      <point x="105.6420454545455" y="130.0" />
+      <point x="82.5" y="130.0" />
+      <point x="27.5" y="15.0" />
+    </edge>
+    <edge source="entity.TicketPerfect" target="entity.Session">
+      <point x="38.125" y="-15.0" />
+      <point x="369.25" y="130.0" />
+      <point x="449.375" y="130.0" />
+      <point x="-34.5" y="15.0" />
+    </edge>
+    <edge source="entity.TicketPerfect" target="entity.Movie">
+      <point x="7.625" y="-15.0" />
+      <point x="338.75" y="110.0" />
+      <point x="368.875" y="110.0" />
+      <point x="-7.0" y="15.0" />
+    </edge>
+    <edge source="entity.TicketPerfect" target="entity.Ticket">
+      <point x="-22.875" y="-15.0" />
+      <point x="308.25" y="60.0" />
+      <point x="252.37500000000003" y="60.0" />
+      <point x="-20.5" y="15.0" />
+    </edge>
+    <edge source="entity.TicketPerfect" target="entity.User">
+      <point x="-38.125" y="-15.0" />
+      <point x="293.0" y="70.0" />
+      <point x="195.625" y="70.0" />
+      <point x="28.125" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="374.0" y="134.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
