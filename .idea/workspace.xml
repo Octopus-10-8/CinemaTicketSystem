@@ -27,35 +27,36 @@
     <session id="-164593025">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.132" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.57" value="2" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.73" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="1" />
-          <entry key="iml" value="3" />
-          <entry key="java" value="628" />
+          <entry key="iml" value="4" />
+          <entry key="java" value="638" />
           <entry key="log" value="2" />
           <entry key="properties" value="3" />
-          <entry key="txt" value="51" />
+          <entry key="txt" value="63" />
           <entry key="uml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="628" />
-          <entry key="PLAIN_TEXT" value="53" />
+          <entry key="IDEA_MODULE" value="4" />
+          <entry key="JAVA" value="638" />
+          <entry key="PLAIN_TEXT" value="65" />
           <entry key="Properties" value="3" />
           <entry key="UML" value="2" />
           <entry key="XML" value="1" />
@@ -64,7 +65,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="java" value="44757" />
+          <entry key="java" value="45142" />
           <entry key="properties" value="21" />
           <entry key="txt" value="12" />
           <entry key="xml" value="14" />
@@ -72,7 +73,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="44757" />
+          <entry key="JAVA" value="45142" />
           <entry key="PLAIN_TEXT" value="23" />
           <entry key="Properties" value="21" />
           <entry key="XML" value="14" />
@@ -81,7 +82,17 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/UserManageMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="47">
+              <caret line="562" column="13" selection-start-line="562" selection-start-column="13" selection-end-line="562" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -108,6 +119,7 @@
       <find>影厅</find>
       <find>场次</find>
       <find>System</find>
+      <find>热门电影</find>
     </findStrings>
   </component>
   <component name="HierarchyBrowserManager">
@@ -116,28 +128,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/utils/SensitivewordFilter.java" />
         <option value="$PROJECT_DIR$/src/entity/TicketPerfect.java" />
         <option value="$PROJECT_DIR$/src/daoImpl/BaseDao.java" />
-        <option value="$PROJECT_DIR$/Comments.txt" />
         <option value="$PROJECT_DIR$/src/utils/MyMd5Utils.java" />
         <option value="$PROJECT_DIR$/users.txt" />
         <option value="$PROJECT_DIR$/src/test/Md5Test.java" />
         <option value="$PROJECT_DIR$/src/view/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/biz/UserBiz.java" />
         <option value="$PROJECT_DIR$/src/utils/DateTest.java" />
-        <option value="$PROJECT_DIR$/hall.txt" />
-        <option value="$PROJECT_DIR$/movie.txt" />
-        <option value="$PROJECT_DIR$/Session.txt" />
-        <option value="$PROJECT_DIR$/Ticket.txt" />
-        <option value="$PROJECT_DIR$/Cinema.txt" />
         <option value="$PROJECT_DIR$/src/test/TestQuartz.java" />
         <option value="$PROJECT_DIR$/src/entity/Movie.java" />
         <option value="$PROJECT_DIR$/src/entity/SessionPerfect.java" />
         <option value="$PROJECT_DIR$/src/test/RecommendedTest.java" />
         <option value="$PROJECT_DIR$/src/test/MoneyTest.java" />
-        <option value="$PROJECT_DIR$/src/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/view/StartMenu.java" />
         <option value="$PROJECT_DIR$/src/bizImpl/SessionBizImpl.java" />
         <option value="$PROJECT_DIR$/src/biz/CinemaBiz.java" />
         <option value="$PROJECT_DIR$/src/dao/MovieDao.java" />
@@ -149,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/test/KeyTest.java" />
         <option value="$PROJECT_DIR$/src/test/InputTest.java" />
         <option value="$PROJECT_DIR$/src/bizImpl/KeyBizImpl.java" />
-        <option value="$PROJECT_DIR$/src/utils/KeyWords.java" />
         <option value="$PROJECT_DIR$/src/biz/HallBiz.java" />
         <option value="$PROJECT_DIR$/src/biz/KeyBiz.java" />
         <option value="$PROJECT_DIR$/src/biz/SessionBiz.java" />
@@ -166,6 +168,16 @@
         <option value="$PROJECT_DIR$/src/biz/TicketBiz.java" />
         <option value="$PROJECT_DIR$/src/bizImpl/TicketBizImpl.java" />
         <option value="$PROJECT_DIR$/src/view/AdminMenu.java" />
+        <option value="$PROJECT_DIR$/Comments.txt" />
+        <option value="$PROJECT_DIR$/hall.txt" />
+        <option value="$PROJECT_DIR$/Cinema.txt" />
+        <option value="$PROJECT_DIR$/movie.txt" />
+        <option value="$PROJECT_DIR$/Session.txt" />
+        <option value="$PROJECT_DIR$/Ticket.txt" />
+        <option value="$PROJECT_DIR$/src/view/StartMenu.java" />
+        <option value="$PROJECT_DIR$/src/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/key.txt" />
+        <option value="$PROJECT_DIR$/src/utils/KeyWords.java" />
         <option value="$PROJECT_DIR$/src/view/UserManageMenu.java" />
       </list>
     </option>
@@ -210,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -224,17 +235,24 @@
               <item name="cinemaTicketSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cinemaTicketSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cinemaTicketSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://F:/Intellij-idea/Iotek/cinemaTicketSystem/src/test/SensitiveWordInit.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546269575617" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546337951987" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -365,7 +383,8 @@
       <workItem from="1546010304672" duration="739000" />
       <workItem from="1546044913262" duration="25721000" />
       <workItem from="1546146014262" duration="12964000" />
-      <workItem from="1546219484678" duration="26103000" />
+      <workItem from="1546219484678" duration="26229000" />
+      <workItem from="1546320332403" duration="9605000" />
     </task>
     <servers />
   </component>
@@ -396,7 +415,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202013000" />
+    <option name="totallyTimeSpent" value="211744000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -410,7 +429,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.2980333" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.30181542" />
       <window_info id="Structure" order="1" sideWeight="0.50230414" side_tool="true" weight="0.290469" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -419,7 +438,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.63849765" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.18309858" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.73239434" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39906102" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -481,121 +500,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/entity/SessionPerfect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/zhangyu.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="" y="">entity.CommentsPerfect</node>
-            <node x="" y="">entity.HallPerfect</node>
-            <node x="" y="">entity.TicketPerfect</node>
-            <node x="" y="">entity.Comments</node>
-            <node x="" y="">entity.User</node>
-            <node x="" y="">entity.Session</node>
-            <node x="" y="">entity.Ticket</node>
-            <node x="" y="">entity.SessionPerfect</node>
-            <node x="" y="">entity.Cinema</node>
-            <node x="" y="">entity.Hall</node>
-            <node x="" y="">entity.Movie</node>
-            <node x="" y="">entity.Key</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="150.0" y="129.5" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/biz/CinemaBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/biz/CommentsBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/biz/HallBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/biz/KeyBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/biz/MovieBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/biz/UserBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bizImpl/CinemaBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2683">
-          <caret line="54" column="48" lean-forward="true" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bizImpl/CommentsBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2393">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bizImpl/HallBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2133">
-          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bizImpl/KeyBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bizImpl/SessionBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -635,9 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -694,9 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
           <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -704,9 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -770,11 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/StartMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/PageUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -833,9 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -877,17 +757,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bizImpl/CinemaBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="999">
+          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cinema.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cinemaTicketSystem.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comments.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hall.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensitiveWord.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ticket.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/StartMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/AdminMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="-1667">
           <caret line="887" column="77" selection-start-line="887" selection-start-column="77" selection-end-line="887" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/key.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/KeyWords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/UserManageMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="154" column="38" selection-start-line="154" selection-start-column="38" selection-end-line="154" selection-end-column="38" />
+        <state relative-caret-position="47">
+          <caret line="562" column="13" selection-start-line="562" selection-start-column="13" selection-end-line="562" selection-end-column="13" />
         </state>
       </provider>
     </entry>

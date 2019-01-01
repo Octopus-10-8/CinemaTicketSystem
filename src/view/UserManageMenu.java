@@ -222,11 +222,11 @@ public class UserManageMenu {
                         }
                         userBiz.updateUser(user);
                         //更新余票
-                        System.out.println("余票=" + session1.getRemain());
+
                         session1.setRemain(session1.getRemain() - 1);
                         sessionBiz.updateSessionHasNoTime(session1);
                         Session session2 = sessionBiz.querySessionByID(session1.getId());
-                        System.out.println(session2);
+
                     } else {
                         System.out.println("失败");
                     }
@@ -492,9 +492,11 @@ public class UserManageMenu {
     private void hotMovie() {
         while (true) {
             ArrayList<Map.Entry<Movie, Double>> entries = ticketBiz.queryBoxOfficeOrderDesc();
+            if (entries.size() == 0) {
+                System.out.println("暂无数据");
+            }
             int i = 1;
             for (Map.Entry<Movie, Double> entry : entries) {
-
                 if (i >= 10) {
                     break;
                 }
@@ -511,9 +513,15 @@ public class UserManageMenu {
     private void perRecommendation() {
         while (true) {
             Key[] keyWords = KeyWords.getKeyWords();
+            if (keyWords==null){
+                System.out.println("暂无数据");
+                return;
+            }
             int count = 0;
             for (int i = 0; i < keyWords.length; i++) {
-
+                if (keyWords[i] == null) {
+                    continue;
+                }
                 ArrayList<Movie> movies = movieBiz.queryByKey(keyWords[i].getKey());
                 if (count > 4) {
                     break;
@@ -528,26 +536,31 @@ public class UserManageMenu {
                 }
 
             }
-
-
             if (!Utils.isGoOn()) {
                 break;
             }
         }
 
     }
+
     private void hotKey() {
         while (true) {
             Key[] keyWords = KeyWords.getKeyWords();
             System.out.println("============搜索热度榜=============");
-            for (int i = 0; i <5; i++) {
-                System.out.println("第"+(i+1)+"名 ["+keyWords[i].getKey()+"]" );
+            if (keyWords==null){
+                System.out.println("暂无数据");
+                return;
+            }
+
+            for (int i = 0; i < 5; i++) {
+                if (keyWords[i] != null) {
+                    System.out.println("第" + (i + 1) + "名 [" + keyWords[i].getKey() + "]");
+                }
+
             }
             if (!Utils.isGoOn()) {
                 break;
             }
-
         }
     }
-
 }

@@ -175,7 +175,7 @@ public class Utils {
         //默认为10列
         int col = 10 + 1;
         int row = capacity / 10;
-        System.out.println(row);
+
         int free = capacity % row;
         row += 1;
         int[][] array = new int[row][col];

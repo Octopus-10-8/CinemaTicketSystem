@@ -21,6 +21,12 @@ public class KeyWords {
                 return o1.getCount() - o2.getCount();
             }
         });
+        //如果key文件里面都不存在一定的容量那么就返回一个null，不然会出现数据错误
+
+        if (keyBiz.queryKey().size()<5){
+
+            return  null;
+        }
 
         for (Key key : keyBiz.queryKey()) {
             if (queue.size() < 5) {
@@ -32,7 +38,6 @@ public class KeyWords {
         }
         Key[] keys = new Key[5];
         for (int i = keys.length - 1; i >= 0; i--) {
-
             keys[i] = queue.poll();
         }
         return keys;
