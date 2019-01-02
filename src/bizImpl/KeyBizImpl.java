@@ -17,6 +17,10 @@ public class KeyBizImpl implements KeyBiz {
 
     private KeyDao keyDao = new KeyDaoImpl();
 
+    /**
+     * 查询关键字
+     * @return
+     */
     @Override
     public ArrayList<Key> queryKey() {
         ArrayList<Key> arrayList = keyDao.queryKey();
@@ -30,6 +34,11 @@ public class KeyBizImpl implements KeyBiz {
         return arrayList;
     }
 
+    /**
+     * 添加关键字
+     * @param key
+     * @return
+     */
     @Override
     public boolean addKey(Key key) {
         if (key == null) {

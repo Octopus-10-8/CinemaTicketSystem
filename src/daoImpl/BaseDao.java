@@ -24,7 +24,11 @@ public class BaseDao {
 		this.file = file;
 	}
 
-
+	/**
+	 * IO数据对象的写入
+	 * @param al
+	 * @param <T>
+	 */
 	public <T> void write(ArrayList<T> al) {
 		try {
 			fos = new FileOutputStream(file);
@@ -37,6 +41,11 @@ public class BaseDao {
 		}
 	}
 
+	/**
+	 * IO对象的读出
+	 * @param <T>
+	 * @return
+	 */
 	public <T> ArrayList<T> read() {
 		ArrayList<T> al = null;
 		try {
@@ -55,6 +64,9 @@ public class BaseDao {
 		return al;
 	}
 
+	/**
+	 * IO资源的关闭
+	 */
 	public void closeAll() {
 
 		if (ois != null) {

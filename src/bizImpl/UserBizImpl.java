@@ -24,6 +24,12 @@ public class UserBizImpl implements UserBiz {
         return userDao.queryByUserID(userId);
     }
 
+    /**
+     * 注册
+     *
+     * @param user
+     * @return
+     */
     @Override
     public boolean regist(User user) {
         ArrayList<User> users = queryUsers();
@@ -36,6 +42,12 @@ public class UserBizImpl implements UserBiz {
         return true;
     }
 
+    /**
+     * 修改用户信息
+     *
+     * @param user
+     * @return
+     */
     @Override
     public boolean updateUser(User user) {
         //如果用户不存在，则失败
@@ -50,6 +62,12 @@ public class UserBizImpl implements UserBiz {
         return false;
     }
 
+    /**
+     * 查询用户根据账号
+     *
+     * @param name
+     * @return
+     */
     @Override
     public User queryByName(String name) {
         ArrayList<User> users = queryUsers();
@@ -61,6 +79,13 @@ public class UserBizImpl implements UserBiz {
         return null;
     }
 
+    /**
+     * 登陆
+     *
+     * @param name
+     * @param passwd
+     * @return
+     */
     @Override
     public boolean login(String name, String passwd) {
         ArrayList<User> users = queryUsers();
@@ -72,6 +97,13 @@ public class UserBizImpl implements UserBiz {
         return false;
     }
 
+    /**
+     * 用户充值
+     *
+     * @param userId
+     * @param money
+     * @return
+     */
     @Override
     public boolean recharge(int userId, double money) {
         User user = userDao.queryByUserID(userId);
@@ -91,7 +123,11 @@ public class UserBizImpl implements UserBiz {
         return true;
     }
 
-
+    /**
+     * 查询VIP用户
+     *
+     * @return
+     */
     @Override
     public ArrayList<User> queryUserOfVip() {
         ArrayList<User> users = queryUsers();

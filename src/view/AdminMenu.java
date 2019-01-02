@@ -60,7 +60,6 @@ public class AdminMenu {
             System.out.println("5.场次管理");
             System.out.println("6.订单管理【影票】");
             System.out.println("7.查看效益");
-            System.out.println("8.vip");
             System.out.println("0.退出");
             String input = scanner.nextLine();
             switch (input) {
@@ -85,10 +84,7 @@ public class AdminMenu {
                 case "7":
                     queryBenefitsManage();
                     break;
-                case "8":
-                    vipMenu();
-                    break;
-                case "0":
+                default:
                     return;
             }
 
@@ -104,6 +100,7 @@ public class AdminMenu {
             System.out.println("==========用户信息管理中心==========");
             System.out.println("1.查询所有用户信息");
             System.out.println("2.重置用户密码");
+            System.out.println("3.查看VIP用户信息");
             System.out.println("0.退出");
             String input = scanner.nextLine();
             switch (input) {
@@ -113,6 +110,8 @@ public class AdminMenu {
                 case "2":
                     updateUserPasswd();
                     break;
+                case "3":
+                    queryUserOfVip();
                 default:
                     return;
             }
@@ -867,6 +866,9 @@ public class AdminMenu {
         }
     }
 
+    /**
+     * 查询所有购票信息
+     */
     private void queryAllTickets() {
         while (true) {
             ArrayList<TicketPerfect> ticketPerfectArrayList = ticketBiz.queryTicket();
@@ -967,26 +969,6 @@ public class AdminMenu {
 
     }
 
-    /**
-     * VIP管理中心
-     */
-    private void vipMenu() {
-
-        while (true) {
-            System.out.println("==========VIP信息管理中心==========");
-            System.out.println("1.查询所有VIP用户信息");
-            System.out.println("0.退出");
-            String input = scanner.nextLine();
-            switch (input) {
-                case "1":
-                    queryUserOfVip();
-                    break;
-                default:
-                    return;
-            }
-
-        }
-    }
 
     /**
      * 查询所有的VIP用户

@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
 public class Md5Test {
 
     public static void main(String[] args) {
-        String s = getMd5("qwer");
+        String s = getMd5("你若安好，便是晴天");
         System.out.println(s);
         String s1 = encode(s);
         System.out.println(s1);

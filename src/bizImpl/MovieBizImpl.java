@@ -26,7 +26,12 @@ public class MovieBizImpl implements MovieBiz {
     private CommentsDao commentsDao = new CommentsDaoImpl();
     private HallDao hallDao = new HallDaoImpl();
 
-
+    /**
+     * 添加电影
+     *
+     * @param movie
+     * @return
+     */
     @Override
     public boolean save(Movie movie) {
         ArrayList<Movie> movies = movieDao.queryMovie();
@@ -41,6 +46,11 @@ public class MovieBizImpl implements MovieBiz {
 
     }
 
+    /**
+     * 查询电影
+     *
+     * @return
+     */
     @Override
     public ArrayList<Movie> queryMovie() {
 
@@ -181,9 +191,12 @@ public class MovieBizImpl implements MovieBiz {
         return true;
     }
 
-    //如果用户数入的ID不存在直接退出
-
-
+    /**
+     * 根据ID查询电影
+     *
+     * @param movieId
+     * @return
+     */
     @Override
     public Movie queryById(int movieId) {
         ArrayList<Movie> movies = queryMovie();
@@ -195,7 +208,12 @@ public class MovieBizImpl implements MovieBiz {
         return null;
     }
 
-
+    /**
+     * 根据关键字查询电影
+     *
+     * @param key
+     * @return
+     */
     @Override
     public ArrayList<Movie> queryByKey(String key) {
         ArrayList<Movie> moviesKey = new ArrayList<>();
@@ -209,7 +227,12 @@ public class MovieBizImpl implements MovieBiz {
         return moviesKey;
     }
 
-
+    /**
+     * 根据电影查询场次
+     *
+     * @param movieId
+     * @return
+     */
     @Override
     public ArrayList<Session> querySessionBymid(int movieId) {
         ArrayList<Session> sessions = sessionDao.querySession();

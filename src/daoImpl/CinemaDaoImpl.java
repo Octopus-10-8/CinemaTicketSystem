@@ -11,7 +11,7 @@ import java.util.Iterator;
  *
  **/
 public class CinemaDaoImpl extends BaseDao implements CinemaDao {
-
+     //初始化表信息
     public CinemaDaoImpl() {
         super(new File("Cinema.txt"));
     }

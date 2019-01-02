@@ -21,6 +21,12 @@ public class CinemaBizImpl implements CinemaBiz {
     private TicketBiz ticketBiz = new TicketBizImpl();
     private UserDao userDao = new UserDaoImpl();
 
+    /**
+     * 添加影院
+     *
+     * @param cinema 电影对象
+     * @return boolean
+     */
     @Override
     public boolean addCinema(Cinema cinema) {
         //如果公司名已被注册则不能添加
@@ -140,6 +146,12 @@ public class CinemaBizImpl implements CinemaBiz {
         return ciAddress;
     }
 
+    /**
+     * 根据ID查询影院
+     *
+     * @param cinemaId
+     * @return
+     */
     @Override
     public Cinema queryById(int cinemaId) {
         ArrayList<Cinema> cinemas = queryCinema();
@@ -170,4 +182,5 @@ public class CinemaBizImpl implements CinemaBiz {
         }
         return res;
     }
+
 }

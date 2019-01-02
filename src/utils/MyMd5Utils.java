@@ -21,7 +21,7 @@ public class MyMd5Utils {
             md.update(str.getBytes());
             res = new BigInteger(1, md.digest()).toString(16);
         } catch (NoSuchAlgorithmException e) {
-            System.out.println("MD5加密发生异常,请检查错误");
+            System.out.println("密码存储失败");
         }
         return res;
     }

@@ -15,8 +15,8 @@ import java.util.ArrayList;
  **/
 public class HallBizImpl implements HallBiz {
 
-    private HallDao hallDao = new HallDaoImpl();  //持有场厅Dao层对象（场厅关联电影院）
-    private CinemaDao cinemaDao = new CinemaDaoImpl();//持有电影院对象
+    private HallDao hallDao = new HallDaoImpl();
+    private CinemaDao cinemaDao = new CinemaDaoImpl();
     private SessionDao sessionDao = new SessionDaoImpl();
     private TicketDao ticketDao = new TicketDaoImpl();
     private TicketBiz ticketBiz = new TicketBizImpl();
@@ -54,6 +54,11 @@ public class HallBizImpl implements HallBiz {
         return false;
     }
 
+    /**
+     * 查询场厅
+     *
+     * @return
+     */
     @Override
     public ArrayList<HallPerfect> queryHall() {
         ArrayList<Hall> halls = hallDao.queryHall();
@@ -68,6 +73,12 @@ public class HallBizImpl implements HallBiz {
         return hallAndCinema;
     }
 
+    /**
+     * 修改场厅
+     *
+     * @param hall
+     * @return
+     */
     @Override
     public boolean updateHall(Hall hall) {
         //更新同理，在处理cid的时候必须加以判断是否存在
@@ -81,6 +92,12 @@ public class HallBizImpl implements HallBiz {
         return false;
     }
 
+    /**
+     * 删除场厅
+     *
+     * @param hallId
+     * @return
+     */
     @Override
     public boolean deleteHall(int hallId) {
         //先判断ID是否存在
@@ -123,6 +140,12 @@ public class HallBizImpl implements HallBiz {
         return true;
     }
 
+    /**
+     * 根据ID查询场厅
+     *
+     * @param hallId
+     * @return
+     */
     @Override
     public Hall queryHallByID(int hallId) {
         Hall hall = hallDao.queryHallByID(hallId);
@@ -132,6 +155,12 @@ public class HallBizImpl implements HallBiz {
         return hall;
     }
 
+    /**
+     * 根据电影院查询下面的所有场厅
+     *
+     * @param cid
+     * @return
+     */
     @Override
     public ArrayList<HallPerfect> queryHallByCid(int cid) {
         ArrayList<Hall> halls = hallDao.queryHall();

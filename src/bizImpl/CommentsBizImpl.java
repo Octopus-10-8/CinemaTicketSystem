@@ -23,6 +23,12 @@ public class CommentsBizImpl implements CommentsBiz {
     private UserDao userDao = new UserDaoImpl();
     private MovieDao movieDao = new MovieDaoImpl();
 
+    /**
+     * 添加评论
+     *
+     * @param comments
+     * @return
+     */
     @Override
     public boolean addComments(Comments comments) {
         //1:评论不能为空
@@ -43,6 +49,11 @@ public class CommentsBizImpl implements CommentsBiz {
         return true;
     }
 
+    /**
+     * 查询评论
+     *
+     * @return
+     */
     @Override
     public ArrayList<CommentsPerfect> queryComments() {
         ArrayList<Comments> comments = commentsDao.queryComments();
@@ -56,6 +67,12 @@ public class CommentsBizImpl implements CommentsBiz {
         return commentsPerfects;
     }
 
+    /**
+     * 修改评论
+     *
+     * @param comments
+     * @return
+     */
     @Override
     public boolean updateComments(Comments comments) {
 
@@ -77,6 +94,12 @@ public class CommentsBizImpl implements CommentsBiz {
         return true;
     }
 
+    /**
+     * 删除评论
+     *
+     * @param commentsId
+     * @return
+     */
     @Override
     public boolean deleteComments(int commentsId) {
 
@@ -88,7 +111,12 @@ public class CommentsBizImpl implements CommentsBiz {
         return true;
     }
 
-    //返回一个Comments对象
+    /**
+     * 返回一个Comments对象
+     *
+     * @param commentsId
+     * @return
+     */
     @Override
     public Comments queryCommentsByID(int commentsId) {
         ArrayList<Comments> comments = commentsDao.queryComments();
@@ -100,7 +128,12 @@ public class CommentsBizImpl implements CommentsBiz {
         return null;
     }
 
-    //返回一个多表联查对象
+    /**
+     * 返回一个多表联查对象
+     *
+     * @param commentsId
+     * @return
+     */
     @Override
     public CommentsPerfect queryCommentsPerfectById(int commentsId) {
         ArrayList<CommentsPerfect> commentsPerfects = queryComments();

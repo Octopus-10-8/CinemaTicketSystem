@@ -16,7 +16,7 @@ public class UserManageMenu {
 
     private UserBiz userBiz = new UserBizImpl();       //User逻辑层引用
     private Scanner scanner = new Scanner(System.in);  //控制台对象
-    private String choice = null;
+    private String choice = null;                      //输入接收变量
     private CinemaBiz cinemaBiz = new CinemaBizImpl();  //电影院对象
     private MovieBiz movieBiz = new MovieBizImpl();   //电影对象
     private HallBiz hallBiz = new HallBizImpl();   //场厅对象
@@ -24,8 +24,8 @@ public class UserManageMenu {
     private TicketBiz ticketBiz = new TicketBizImpl(); //影票对象
     private SensitivewordFilter filter = new SensitivewordFilter();  //检查敏感词类
     private CommentsBiz commentsBiz = new CommentsBizImpl();  //评论对象
-    private KeyBiz keyBiz = new KeyBizImpl();
-    public User user = null;
+    private KeyBiz keyBiz = new KeyBizImpl();               //关键字对象
+    public User user = null;                                //当前用户对象
 
     /**
      * 注册菜单
@@ -152,10 +152,10 @@ public class UserManageMenu {
             int movieID = Utils.checkInput("请选择电影ID", 1, 10000);
             Movie movie = movieBiz.queryById(movieID);
             if (movie == null) {
-                System.out.println("ID输入错误，正在返回...");
+                System.out.println("输入影院不存在，正在返回...");
                 break;
             }
-            //2：选择电影院
+            ///电影院的选择，这里显示的电影院必须是包含前面电影的电影院
             ArrayList<Cinema> cinemas = cinemaBiz.queryCinema();
             Utils.showList(cinemas, "电影院");
             int cid = Utils.checkInput("请选择电影院ID", 1, 1000);
@@ -235,13 +235,16 @@ public class UserManageMenu {
                 }
 
             }
-
             if (!Utils.isGoOn()) {
                 break;
             }
         }
     }
 
+    /**
+     *
+     *  关键字查询电影
+     */
     private void movieQueryMenu() {
         while (true) {
             System.out.println("请输入关键字[电影名、详情、类型]");
@@ -296,6 +299,7 @@ public class UserManageMenu {
             System.out.println("3.查看某部电影的评论");
             System.out.println("4.查看所有评论");
             System.out.println("5.退票");
+            System.out.println("6.删除评论");
             String input = Utils.checkInputForStr(scanner.nextLine());
             switch (input) {
                 case "1":
@@ -313,13 +317,15 @@ public class UserManageMenu {
                 case "5":
                     refund();
                     break;
+                case "6":
+                    deleteComment();
+                    break;
                 default:
                     return;
             }
 
         }
     }
-
 
     /**
      * 查询所有评论
@@ -348,9 +354,6 @@ public class UserManageMenu {
                 System.out.println("输入的ID有误");
                 break;
             }
-            //检查用户选择的票的时候是否是当前时间2个小时后的
-
-
             System.out.println("检查退票信息=" + ticketPerfect);
             //更新用户余额
             double price = ticketPerfect.getSession().getPrice();
@@ -359,10 +362,7 @@ public class UserManageMenu {
             userBiz.updateUser(user);
             //删除票
             boolean b = ticketBiz.deleteTicket(ticketPerfect.getTicket().getId());
-
             //余票加一
-
-
             if (b) {
                 System.out.println("退票成功");
             } else {
@@ -378,7 +378,10 @@ public class UserManageMenu {
 
     }
 
-
+    /**
+     *
+     *  显示我的所有购票信息
+     */
     private void showMyTickets() {
         while (true) {
             ArrayList<TicketPerfect> ticketPerfectArrayList = ticketBiz.queryTicketByuserId(user.getId());
@@ -391,12 +394,16 @@ public class UserManageMenu {
 
     }
 
+    /**
+     *
+     * 发表评论
+     */
     private void releaseComment() {
         while (true) {
             ArrayList<TicketPerfect> ticketPerfectArrayList = ticketBiz.queryTicketByuserId(user.getId());
             Utils.showList(ticketPerfectArrayList, "用户[" + user.getName() + "]的购票信息");
-            int movied = Utils.checkInput("请选择对应的电影ID", 1, 1000);
-            if (movieBiz.queryById(movied) == null) {
+            int tid = Utils.checkInput("请选择对应的影票ID", 1, 1000);
+            if (ticketBiz.queryTicketByID(tid) == null) {
                 System.out.println("输入有误，该电影不存在");
                 break;
             }
@@ -405,7 +412,9 @@ public class UserManageMenu {
             String commentsUser = Utils.checkInputForStr(scanner.nextLine());
             //需要经过敏感词过滤
             String commentrHasFiltered = filter.replaceSensitiveWord(commentsUser, 1, "*");
-            Comments comments = new Comments(user.getId(), movied, commentrHasFiltered, Utils.getTime());
+            //查询对应的电影
+            Ticket ticket = ticketBiz.queryTicketByID(tid);
+            Comments comments = new Comments(user.getId(), ticket.getMovieId(), commentrHasFiltered, Utils.getTime());
             boolean b = commentsBiz.addComments(comments);
             if (b) {
                 System.out.println("评论成功");
@@ -442,6 +451,42 @@ public class UserManageMenu {
 
     }
 
+    /**
+     * 删除评论
+     */
+
+    private void deleteComment() {
+        while (true) {
+            ArrayList<CommentsPerfect> commentsPerfects = commentsBiz.queryComments();
+            for (CommentsPerfect commentsPerfect : commentsPerfects) {
+                if (commentsPerfect.getUser().getName().equals(user.getName())) {
+                    System.out.println(commentsPerfect);
+                }
+            }
+            int commentId = Utils.checkInput("请选择对应的ID", 1, 10000);
+            if (commentsBiz.queryCommentsByID(commentId) == null) {
+                System.out.println("ID选择有误");
+                break;
+            }
+            //删除ID对应的评论
+            boolean b = commentsBiz.deleteComments(commentId);
+            if (b) {
+                System.out.println("删除成功");
+            } else {
+                System.out.println("删除失败");
+            }
+            if (!Utils.isGoOn()) {
+                break;
+            }
+
+
+        }
+    }
+
+    /**
+     *
+     *  个人信息
+     */
     private void personalProfileMenu() {
         while (true) {
             User user = userBiz.queryByName(this.user.getName());
@@ -510,10 +555,13 @@ public class UserManageMenu {
         }
     }
 
+    /**
+     * 个人推荐
+      */
     private void perRecommendation() {
         while (true) {
             Key[] keyWords = KeyWords.getKeyWords();
-            if (keyWords==null){
+            if (keyWords == null) {
                 System.out.println("暂无数据");
                 return;
             }
@@ -543,11 +591,15 @@ public class UserManageMenu {
 
     }
 
+    /**
+     *
+     * 热门搜索
+     */
     private void hotKey() {
         while (true) {
             Key[] keyWords = KeyWords.getKeyWords();
             System.out.println("============搜索热度榜=============");
-            if (keyWords==null){
+            if (keyWords == null) {
                 System.out.println("暂无数据");
                 return;
             }

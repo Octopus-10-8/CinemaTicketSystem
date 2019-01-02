@@ -24,6 +24,12 @@ public class SessionBizImpl implements SessionBiz {
     private CommentsDao commentsDao = new CommentsDaoImpl();
     private TicketBiz ticketBiz = new TicketBizImpl();
 
+    /**
+     * 添加场次
+     *
+     * @param session
+     * @return
+     */
     @Override
     public boolean addSession(Session session) {
         Cinema cinema = cinemaDao.queryCinemaById(session.getCid());
@@ -62,13 +68,10 @@ public class SessionBizImpl implements SessionBiz {
             //不用判断满足，对立条件不满足就返回false
             String objEnd = Utils.scheduljudge(sessionPerfect.getSession().getTime(), sessionPerfect.getMovie().getDuration() + 15);  //比较的对象
             String objStart = sessionPerfect.getSession().getTime();
-
             if (objEnd.compareTo(currentEnd) > 0 && objStart.compareTo(currentEnd) < 0) {
-
                 return false;
             }
             if (objStart.compareTo(currendStart) < 0 && objEnd.compareTo(currendStart) > 0) {
-
                 return false;
             }
         }
@@ -76,6 +79,11 @@ public class SessionBizImpl implements SessionBiz {
         return true;
     }
 
+    /**
+     * 查询场次
+     *
+     * @return
+     */
     @Override
     public ArrayList<SessionPerfect> querySession() {
         ArrayList<Session> sessions = sessionDao.querySession();
@@ -168,6 +176,12 @@ public class SessionBizImpl implements SessionBiz {
         return true;
     }
 
+    /**
+     * 删除场次
+     *
+     * @param sessionId
+     * @return
+     */
     @Override
     public boolean deleteSession(int sessionId) {
         Session session = sessionDao.querySessionByID(sessionId);
@@ -201,6 +215,12 @@ public class SessionBizImpl implements SessionBiz {
 
     }
 
+    /**
+     * 根据ID查询场次
+     *
+     * @param sessionId
+     * @return
+     */
     @Override
     public Session querySessionByID(int sessionId) {
         ArrayList<Session> sessions = sessionDao.querySession();
@@ -212,6 +232,12 @@ public class SessionBizImpl implements SessionBiz {
         return null;
     }
 
+    /**
+     * 根据场厅查询场次
+     *
+     * @param hallId
+     * @return
+     */
     @Override
     public ArrayList<SessionPerfect> queryByHid(int hallId) {
         //先查询所有的场次，然后在筛选出根场厅ID对应的所有的数据
@@ -232,6 +258,12 @@ public class SessionBizImpl implements SessionBiz {
         return sessionPerfects;
     }
 
+    /**
+     * 根据场次ID查询单个对象
+     *
+     * @param sessionId
+     * @return
+     */
     @Override
     public SessionPerfect queryPerfectBySeesion(int sessionId) {
         ArrayList<Session> sessions = sessionDao.querySession();

@@ -19,6 +19,12 @@ public class TicketBizImpl implements TicketBiz {
     private MovieDao movieDao = new MovieDaoImpl();
     private CinemaDao cinemaDao = new CinemaDaoImpl();
 
+    /**
+     * 添加影票
+     *
+     * @param ticket
+     * @return
+     */
     @Override
     public boolean addTickets(Ticket ticket) {
         //查询对应的用户是否存在
@@ -26,21 +32,20 @@ public class TicketBizImpl implements TicketBiz {
         if (user == null) {
             return false;
         }
-
         //查询对应的场次是否存在
         Session session = sessionDao.querySessionByID(ticket.getSid());
-
         if (session == null) {
-
             return false;
         }
-
-
         ticketDao.save(ticket);
-
         return true;
     }
 
+    /**
+     * 查询影票
+     *
+     * @return
+     */
     @Override
     public ArrayList<TicketPerfect> queryTicket() {
         ArrayList<Ticket> tickets = ticketDao.queryTicket();
@@ -59,6 +64,12 @@ public class TicketBizImpl implements TicketBiz {
 
     }
 
+    /**
+     * 根据ID查询影票
+     *
+     * @param id
+     * @return
+     */
     @Override
     public TicketPerfect queryTicketPerfectById(int id) {
         ArrayList<TicketPerfect> ticketPerfectArrayList = queryTicket();
@@ -67,10 +78,15 @@ public class TicketBizImpl implements TicketBiz {
                 return ticketPerfect;
             }
         }
-
         return null;
     }
 
+    /**
+     * 修改影票
+     *
+     * @param ticket
+     * @return
+     */
     @Override
     public boolean updateTicket(Ticket ticket) {
         //判断对象是否为空，是否存在
@@ -81,6 +97,12 @@ public class TicketBizImpl implements TicketBiz {
         return true;
     }
 
+    /**
+     * 删除影票
+     *
+     * @param ticketsId
+     * @return
+     */
     @Override
     public boolean deleteTicket(int ticketsId) {
         //判断对象是否为空，是否存在
@@ -90,6 +112,12 @@ public class TicketBizImpl implements TicketBiz {
         return true;
     }
 
+    /**
+     * 查询单个影票
+     *
+     * @param ticketsId
+     * @return
+     */
     @Override
     public Ticket queryTicketByID(int ticketsId) {
         ArrayList<Ticket> tickets = ticketDao.queryTicket();
@@ -101,7 +129,12 @@ public class TicketBizImpl implements TicketBiz {
         return null;
     }
 
-    //根据场次在影票表中查询所有的座位信息，以字符串的形式保存在集合中
+    /**
+     * 根据场次在影票表中查询所有的座位信息，以字符串的形式保存在集合中
+     *
+     * @param sessionId
+     * @return
+     */
     @Override
     public ArrayList<String> getSeatBySessionId(int sessionId) {
         //首先查询所有的影票
@@ -117,7 +150,12 @@ public class TicketBizImpl implements TicketBiz {
         return arrayList;
     }
 
-
+    /**
+     * 根据用户查询对应的影票
+     *
+     * @param userID
+     * @return
+     */
     @Override
     public ArrayList<TicketPerfect> queryTicketByuserId(int userID) {
         ArrayList<TicketPerfect> ticketPerfectArrayList = queryTicket();
@@ -211,6 +249,12 @@ public class TicketBizImpl implements TicketBiz {
         return listForCinema;
     }
 
+    /**
+     * 根据场次查询对应影票
+     *
+     * @param sessionId
+     * @return
+     */
     @Override
     public ArrayList<Ticket> queryTicketBySession(int sessionId) {
         ArrayList<Ticket> tickets = ticketDao.queryTicket();
@@ -223,7 +267,12 @@ public class TicketBizImpl implements TicketBiz {
         return ticketsForSession;
     }
 
-
+    /**
+     * 根据场次ID查询影票多表信息
+     *
+     * @param sessionId
+     * @return
+     */
     @Override
     public ArrayList<TicketPerfect> showTicketBySession(int sessionId) {
         ArrayList<Ticket> tickets = ticketDao.queryTicket();
