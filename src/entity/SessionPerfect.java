@@ -3,14 +3,14 @@ package entity;
 import utils.Utils;
 
 /**
- * Date: 2018/12/26 0026
+ *场次中间关联表
  **/
 public class SessionPerfect {
 
-    private Session session;
-    private Hall hall;
-    private Cinema cinema;
-    private Movie movie;
+    private Session session;   //场次
+    private Hall hall;     //场厅
+    private Cinema cinema;   //影院
+    private Movie movie;   //电影
 
     @Override
     public String toString() {

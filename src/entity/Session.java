@@ -3,8 +3,8 @@ package entity;
 import java.io.Serializable;
 
 /**
- * session	场次	场次ID	场厅	电影院	电影	播放时间	价格	剩余座位数
- * id	hid	cid	movie_id	time	price	remain
+ *
+ * 场次
  **/
 public class Session implements Serializable {
 

@@ -9,6 +9,8 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
+ *
+ * 热度关键字推送
  * Date: 2018/12/31 0031
  **/
 public class KeyWords {
@@ -21,10 +23,8 @@ public class KeyWords {
                 return o1.getCount() - o2.getCount();
             }
         });
-        //如果key文件里面都不存在一定的容量那么就返回一个null，不然会出现数据错误
-
+        //如果key文件里面都不存在一定的容量那么就返回一个null，然后View做判断
         if (keyBiz.queryKey().size()<5){
-
             return  null;
         }
 

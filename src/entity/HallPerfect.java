@@ -1,14 +1,14 @@
 package entity;
 
 /**
- * 包含所有的实体类，用于提供所有的多表联查显示功能
- * <p>
- * 根据不同的需求来舍设计不同的显示方法，多种组合来提供解决方案
+ * 场厅关联表
+ *
+ *
  **/
 public class HallPerfect {
 
-    private Cinema cinema;
-    private Hall hall;
+    private Cinema cinema;   //影院
+    private Hall hall;       //场厅
 
 
     public Cinema getCinema() {

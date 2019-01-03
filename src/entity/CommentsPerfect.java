@@ -1,12 +1,12 @@
 package entity;
 
 /**
- * private int id;   //主键ID
- * private int uid;    //用户ID
- * private int movie_id;   //电影ID
- * private String comments;   //评论内容
- * private String commentsTime;  //评论时间
- * Date: 2018/12/27 0027
+ *
+ *
+ * 评论中间关联表
+ *
+ *
+ *
  **/
 public class CommentsPerfect {
     private Comments comments;

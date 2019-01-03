@@ -4,15 +4,15 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 /**
- * ticket	影票	影票ID	所属用户	场次	座位号
- * id	uid	sid	seat
+ *
+ * 影票表
  **/
 public class Ticket implements Serializable {
 
-    private int id;
-    private int uid;
-    private int sid;
-    private int movieId;
+    private int id;   //影票ID
+    private int uid;   //用户ID
+    private int sid;   //场次ID
+    private int movieId;   //电影ID
     private String seat;   //eg:5排1座
 
     public Ticket(int uid, int sid, int movieId, String seat) {

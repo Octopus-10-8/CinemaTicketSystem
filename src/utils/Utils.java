@@ -195,7 +195,12 @@ public class Utils {
             array[s1][s2] = 1;
         }
         for (int i = 1; i < array.length; i++) {
-            System.out.print("第" + i + "排=");
+            if (i == 10) {
+                System.out.print("第" + i + "排=");
+            } else {
+                System.out.print("第" + i + "排= ");
+            }
+
             for (int j = 1; j < col; j++) {
 
                 if (array[i][j] == 0) {
@@ -276,11 +281,7 @@ public class Utils {
 
 
     /**
-     *
-     *
      * Double类型保留小数
-     *
-     *
      */
 
     public static double decimalForDouble(double d) {

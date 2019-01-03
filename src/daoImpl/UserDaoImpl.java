@@ -17,12 +17,21 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     private ArrayList<User> users;    //用户对象集合
 
+    /**
+     * 查询用户
+     * @return
+     */
     @Override
     public ArrayList<User> queryUsers() {
         users = read();
         return users;
     }
 
+    /**
+     * 根据ID查询用户
+     * @param userId
+     * @return
+     */
     @Override
     public User queryByUserID(int userId) {
         users = read();
@@ -35,6 +44,10 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return null;
     }
 
+    /**
+     * 添加用户
+     * @param user
+     */
     @Override
     public void addUser(User user) {
         users = read();
@@ -49,6 +62,10 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     }
 
+    /**
+     * 修改用户
+     * @param user
+     */
     @Override
     public void updateUser(User user) {
         users = read();

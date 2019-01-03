@@ -5,8 +5,8 @@ import utils.Utils;
 import java.io.Serializable;
 
 /**
- * user	用户表：	用户ID	姓名	密码	等级	余额
- * id	name	passwd	level	balance
+ *
+ *  用户表
  **/
 public class User implements Serializable {
 

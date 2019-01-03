@@ -16,6 +16,10 @@ public class CommentsDaoImpl extends BaseDao implements CommentsDao {
         super(new File("Comments.txt"));
     }
 
+    /**
+     * 添加评论
+     * @param comments
+     */
     @Override
     public void save(Comments comments) {
         ArrayList<Comments> read = read();
@@ -29,13 +33,20 @@ public class CommentsDaoImpl extends BaseDao implements CommentsDao {
         closeAll();
     }
 
-
+    /**
+     * 查询评论
+     * @return
+     */
     @Override
     public ArrayList<Comments> queryComments() {
         ArrayList<Comments> read = read();
         return read;
     }
 
+    /**
+     * 修改评论
+     * @param comments
+     */
     @Override
     public void updateComments(Comments comments) {
         ArrayList<Comments> read = read();
@@ -48,6 +59,10 @@ public class CommentsDaoImpl extends BaseDao implements CommentsDao {
         closeAll();
     }
 
+    /**
+     * 删除评论
+     * @param commentsId
+     */
     @Override
     public void deleteComments(int commentsId) {
         ArrayList<Comments> read = read();

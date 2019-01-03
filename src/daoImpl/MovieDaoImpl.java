@@ -19,6 +19,10 @@ public class MovieDaoImpl extends BaseDao implements MovieDao {
         super(new File("movie.txt"));
     }
 
+    /**
+     * 添加电影
+     * @param movie
+     */
     @Override
     public void save(Movie movie) {
         movieArrayList = read();
@@ -32,6 +36,10 @@ public class MovieDaoImpl extends BaseDao implements MovieDao {
         closeAll();
     }
 
+    /**
+     * 查询电影
+     * @return
+     */
     @Override
     public ArrayList<Movie> queryMovie() {
         movieArrayList = read();
@@ -39,6 +47,10 @@ public class MovieDaoImpl extends BaseDao implements MovieDao {
         return movieArrayList;
     }
 
+    /**
+     * 修改电影
+     * @param movie
+     */
     @Override
     public void updateMovie(Movie movie) {
         movieArrayList = read();
@@ -51,6 +63,10 @@ public class MovieDaoImpl extends BaseDao implements MovieDao {
         closeAll();
     }
 
+    /**
+     * 删除电影
+     * @param movieId
+     */
     @Override
     public void deleteMovie(int movieId) {
 
@@ -67,6 +83,11 @@ public class MovieDaoImpl extends BaseDao implements MovieDao {
 
     }
 
+    /**
+     * 通过ID查询电影
+     * @param movieId
+     * @return
+     */
     @Override
     public Movie queryById(int movieId) {
         movieArrayList = read();

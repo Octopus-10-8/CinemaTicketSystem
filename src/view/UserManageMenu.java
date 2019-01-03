@@ -164,6 +164,7 @@ public class UserManageMenu {
                 System.out.println("输入影院ID不存在");
                 return;
             }//3：选择场次（这里的场次必须是包含于前面的电影院的而且电影ID必须对应）
+            //注意：这里的场次时间必须大于当前时间的（即无法购票）
             ArrayList<SessionPerfect> sessionPerfects = sessionBiz.querySessionByCid(cid, movieID);
             if (sessionPerfects.size() == 0) {
                 System.out.println("该影院暂无上映场次，无法购票");
@@ -171,12 +172,18 @@ public class UserManageMenu {
             }
             Utils.showList(sessionPerfects, "电影院场次");
             int sessionId = Utils.checkInput("请选择场次ID", 1, 1000);
-            //获得场厅容量
+            //获得场次
             Session session = sessionBiz.querySessionByID(sessionId);
             if (session == null) {
                 System.out.println("输入场次ID有误");
                 break;
             }
+            //判断场次时间是否已过
+            if (session.getTime().compareTo(Utils.getTime()) < 0) {
+                System.out.println("时间已过，无法购买");
+                break;
+            }
+
             Hall hall = hallBiz.queryHallByID(session.getHid());
             //4：选择座位
             ArrayList<String> seatBySessionIdArraylist = ticketBiz.getSeatBySessionId(sessionId);
@@ -222,7 +229,6 @@ public class UserManageMenu {
                         }
                         userBiz.updateUser(user);
                         //更新余票
-
                         session1.setRemain(session1.getRemain() - 1);
                         sessionBiz.updateSessionHasNoTime(session1);
                         Session session2 = sessionBiz.querySessionByID(session1.getId());
@@ -242,8 +248,7 @@ public class UserManageMenu {
     }
 
     /**
-     *
-     *  关键字查询电影
+     * 关键字查询电影
      */
     private void movieQueryMenu() {
         while (true) {
@@ -300,6 +305,7 @@ public class UserManageMenu {
             System.out.println("4.查看所有评论");
             System.out.println("5.退票");
             System.out.println("6.删除评论");
+            System.out.println("0.返回上一层");
             String input = Utils.checkInputForStr(scanner.nextLine());
             switch (input) {
                 case "1":
@@ -354,6 +360,11 @@ public class UserManageMenu {
                 System.out.println("输入的ID有误");
                 break;
             }
+            //检查时间，如果该场次已经放映，则无法退票
+            if (ticketPerfect.getSession().getTime().compareTo(Utils.getTime()) < 0) {
+                System.out.println("该场次正在放映或者已经放映无法退票");
+                break;
+            }
             System.out.println("检查退票信息=" + ticketPerfect);
             //更新用户余额
             double price = ticketPerfect.getSession().getPrice();
@@ -368,8 +379,6 @@ public class UserManageMenu {
             } else {
                 System.out.println("退票失败");
             }
-
-
             if (!Utils.isGoOn()) {
                 break;
             }
@@ -379,8 +388,7 @@ public class UserManageMenu {
     }
 
     /**
-     *
-     *  显示我的所有购票信息
+     * 显示我的所有购票信息
      */
     private void showMyTickets() {
         while (true) {
@@ -395,7 +403,6 @@ public class UserManageMenu {
     }
 
     /**
-     *
      * 发表评论
      */
     private void releaseComment() {
@@ -484,8 +491,7 @@ public class UserManageMenu {
     }
 
     /**
-     *
-     *  个人信息
+     * 个人信息
      */
     private void personalProfileMenu() {
         while (true) {
@@ -557,7 +563,7 @@ public class UserManageMenu {
 
     /**
      * 个人推荐
-      */
+     */
     private void perRecommendation() {
         while (true) {
             Key[] keyWords = KeyWords.getKeyWords();
@@ -592,7 +598,6 @@ public class UserManageMenu {
     }
 
     /**
-     *
      * 热门搜索
      */
     private void hotKey() {

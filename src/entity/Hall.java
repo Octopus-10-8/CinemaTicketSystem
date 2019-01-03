@@ -3,8 +3,8 @@ package entity;
 import java.io.Serializable;
 
 /**
- * hall	场厅	场厅ID	场厅名称		场厅容量
- * id	name		capacity
+ *
+ * 场厅表
  **/
 public class Hall implements Serializable {
 

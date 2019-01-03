@@ -16,6 +16,10 @@ public class SessionDaoImpl extends BaseDao implements SessionDao {
         super(new File("Session.txt"));
     }
 
+    /**
+     * 添加场次
+     * @param session
+     */
     @Override
     public void save(Session session) {
         ArrayList<Session> read = read();
@@ -29,12 +33,20 @@ public class SessionDaoImpl extends BaseDao implements SessionDao {
         closeAll();
     }
 
+    /**
+     * 查询场次
+     * @return
+     */
     @Override
     public ArrayList<Session> querySession() {
         ArrayList<Session> read = read();
         return read;
     }
 
+    /**
+     * 修改场次
+     * @param session
+     */
     @Override
     public void updateSession(Session session) {
         ArrayList<Session> read = read();
@@ -47,6 +59,10 @@ public class SessionDaoImpl extends BaseDao implements SessionDao {
         closeAll();
     }
 
+    /**
+     * 删除场次
+     * @param sessionId
+     */
     @Override
     public void deleteSession(int sessionId) {
         ArrayList<Session> read = read();
@@ -61,6 +77,11 @@ public class SessionDaoImpl extends BaseDao implements SessionDao {
 
     }
 
+    /**
+     * 根据ID查询场次
+     * @param sessionId
+     * @return
+     */
     @Override
     public Session querySessionByID(int sessionId) {
         ArrayList<Session> read = read();

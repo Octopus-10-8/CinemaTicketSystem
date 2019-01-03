@@ -18,6 +18,10 @@ public class CinemaDaoImpl extends BaseDao implements CinemaDao {
 
     ArrayList<Cinema> cinemaArrayList = null;
 
+    /**
+     * 存储电影院
+     * @param cinema
+     */
     @Override
     public void save(Cinema cinema) {
         cinemaArrayList = read();
@@ -31,12 +35,20 @@ public class CinemaDaoImpl extends BaseDao implements CinemaDao {
         closeAll();
     }
 
+    /**
+     * 查询电影院
+     * @return
+     */
     @Override
     public ArrayList<Cinema> queryCinema() {
         cinemaArrayList = read();
         return cinemaArrayList;
     }
 
+    /**
+     * 修改电影院信息
+     * @param cinema
+     */
     @Override
     public void updateCinema(Cinema cinema) {
         cinemaArrayList = read();
@@ -50,6 +62,10 @@ public class CinemaDaoImpl extends BaseDao implements CinemaDao {
 
     }
 
+    /**
+     * 删除电影院
+     * @param cinemaId
+     */
     @Override
     public void deleteCinema(int cinemaId) {
 
@@ -64,6 +80,11 @@ public class CinemaDaoImpl extends BaseDao implements CinemaDao {
         closeAll();
     }
 
+    /**
+     * 根据ID查询电影院
+     * @param cinemaId
+     * @return
+     */
     @Override
     public Cinema queryCinemaById(int cinemaId) {
         ArrayList<Cinema> read = read();

@@ -223,7 +223,7 @@ public class AdminMenu {
             String name = Utils.checkInputForStr(scanner.nextLine());
             System.out.println("请输入电影详情");
             String detail = Utils.checkInputForStr(scanner.nextLine());
-            int duration = Utils.checkInput("请输入电影时长[单位：分钟]", 1, 1000);
+            int duration = Utils.checkInput("请输入电影时长[单位：分钟]", 50, 300);
             System.out.println("请输入电影类型");
             String type = Utils.checkInputForStr(scanner.nextLine());
             Movie movie = new Movie(name, detail, duration, type);
@@ -817,7 +817,7 @@ public class AdminMenu {
 
             ArrayList<SessionPerfect> sessionPerfects = sessionBiz.querySession();
             Utils.showList(sessionPerfects, "场次信息展示");
-            int id = Utils.checkInput("请选择对应的ID进行修改", 1, 1000);
+            int id = Utils.checkInput("请选择对应的ID进行删除", 1, 1000);
             Session session = sessionBiz.querySessionByID(id);
             if (session == null) {
                 System.out.println("输入ID错误");

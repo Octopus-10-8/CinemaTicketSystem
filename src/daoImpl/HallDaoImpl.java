@@ -16,6 +16,10 @@ public class HallDaoImpl extends BaseDao implements HallDao {
         super(new File("hall.txt"));
     }
 
+    /**
+     * 添加场厅
+     * @param hall
+     */
     @Override
     public void save(Hall hall) {
 
@@ -30,12 +34,20 @@ public class HallDaoImpl extends BaseDao implements HallDao {
         closeAll();
     }
 
+    /**
+     * 查询场厅
+     * @return
+     */
     @Override
     public ArrayList<Hall> queryHall() {
         ArrayList<Hall> read = read();
         return read;
     }
 
+    /**
+     * 修改场厅
+     * @param hall
+     */
     @Override
     public void updateHall(Hall hall) {
         ArrayList<Hall> read = read();
@@ -49,6 +61,10 @@ public class HallDaoImpl extends BaseDao implements HallDao {
 
     }
 
+    /**
+     * 删除场厅
+     * @param hallId
+     */
     @Override
     public void deleteHall(int hallId) {
         ArrayList<Hall> read = read();
@@ -62,6 +78,11 @@ public class HallDaoImpl extends BaseDao implements HallDao {
         closeAll();
     }
 
+    /**
+     * 通过ID查询场厅
+     * @param hallId
+     * @return
+     */
     @Override
     public Hall queryHallByID(int hallId) {
         ArrayList<Hall> halls = queryHall();

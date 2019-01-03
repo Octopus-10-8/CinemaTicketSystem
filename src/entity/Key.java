@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
+ * 热门关键字
  * Date: 2018/12/31 0031
  **/
-public class Key  implements Serializable {
+public class Key implements Serializable {
 
-    private String key;
+    private String key;  //关键词
 
-    private int count;
+    private int count;   //关键词出现次数
 
     public Key(String key) {
         this.key = key;

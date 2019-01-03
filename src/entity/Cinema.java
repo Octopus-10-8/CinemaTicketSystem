@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * cinema	影院	影院ID	影院名称	影院地址
- * id	name	address
+ *
+ * 影院表
  **/
 public class Cinema implements Serializable {
 

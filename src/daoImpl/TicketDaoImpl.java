@@ -15,6 +15,10 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
         super(new File("Ticket.txt"));
     }
 
+    /**
+     * 添加影票
+     * @param ticket
+     */
     @Override
     public void save(Ticket ticket) {
         ArrayList<Ticket> read = read();
@@ -28,12 +32,20 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
         closeAll();
     }
 
+    /**
+     * 查询影票
+     * @return
+     */
     @Override
     public ArrayList<Ticket> queryTicket() {
         ArrayList<Ticket> read = read();
         return read;
     }
 
+    /**
+     * 修改影票
+     * @param ticket
+     */
     @Override
     public void updateTicket(Ticket ticket) {
         ArrayList<Ticket> read = read();
@@ -48,6 +60,10 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
 
     }
 
+    /**
+     * 删除影票
+     * @param ticketsId
+     */
     @Override
     public void deleteTicket(int ticketsId) {
         ArrayList<Ticket> read = read();
@@ -61,6 +77,11 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
         closeAll();
     }
 
+    /**
+     * 根据ID查询影票
+     * @param ticketsId
+     * @return
+     */
     @Override
     public Ticket queryTicketByID(int ticketsId) {
         ArrayList<Ticket> read = read();

@@ -4,14 +4,14 @@ package entity;
 import utils.Utils;
 
 /**
- * Date: 2018/12/26 0026
+ *影票中间关联表
  **/
 public class TicketPerfect {
 
-    private Ticket ticket;
-    private User user;
-    private Session session;
-    private Movie movie;
+    private Ticket ticket;   //影票
+    private User user;   //用户
+    private Session session;  //场次
+    private Movie movie;  //电影
 
 
     public Ticket getTicket() {

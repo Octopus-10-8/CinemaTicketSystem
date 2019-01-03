@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * movie	电影表	电影ID	电影名称	电影详情	电影时长	电影类型
- * id	name	detail	duration	type
+ *电影表
+ *
  **/
 public class Movie implements Serializable {
 

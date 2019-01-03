@@ -3,7 +3,7 @@ package entity;
 import java.io.Serializable;
 
 /**
- * Date: 2018/12/25 0025
+ *  评论表
  **/
 public class Comments implements Serializable {
 
